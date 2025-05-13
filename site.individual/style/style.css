@@ -38,7 +38,7 @@ header .container .navbar  {
 
 }
 
-.inicio .banner h1 {
+.banner-texto  h1 {
     position: relative;
     color: #043A06;
     display:flex ;
@@ -51,7 +51,7 @@ header .container .navbar  {
     margin-left: 200px;
 }
 
-.inicio .banner P {
+.banner-texto P {
     display: flex;
     position: absolute;
     text-align: center;
@@ -85,17 +85,18 @@ button:hover{
 
 .banner {
     display: flex;
+    justify-content: space-between;
+    padding: 0;
+    align-items: flex-start;
+    height: auto;
     
 }
-.img_inicio {
-    margin: 20px;
+
+.img_inicio{
+    position: relative;
+    top: -20px;
 }
+
 .img_inicio img{
     width: 500px;
-    max-width:100%;
-    left: 860px;
-    position: absolute;
-    
-    
-    
 } 

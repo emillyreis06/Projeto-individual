@@ -70,6 +70,103 @@
             </div>        
         </div>       
     </section>
+
+    <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+      </div>
+
+    
     
 </body>
 </html>
+<script>
+
+  function cadastrar() {
+
+    var nomeVar = input_nome.value;
+    var emailVar = input_email.value;
+    var senhaVar = input_senha.value;
+    var confirmarVar = input_confirmar.value;
+
+
+
+    // Verificando se há algum campo em branco
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmarVar == "" 
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Preencha todos os campos para efetivar o cadastro";
+      return false;
+    } else if (nomeVar.length < 1){
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML =
+        "Informe um nome válido";
+    }else if (senhaVar != confirmarVar){
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML =
+        "Senha incorreta";
+    } else if (!emailVar.includes("@")){
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML =
+        "Informe um email válido ( deve possuir @)";
+    } else if (senhaVar.length < 6){
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML =
+        "Informe um email válido ( deve possuir @)";
+    }
+    
+    else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+        confirmarVar: confirmarVar
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");
+
+          limparFormulario();
+       
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    
+      });
+
+    return false;
+  }
+
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+</script>

@@ -3,9 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../site.individual/style/style.css">
+    <title>Cadastro</title>
 </head>
 <body>
+
+    <header>
+        <div class="container">
+            <h1>Reismove</h1>
+            <ul class="navbar">
+                <li>
+                    <a href="index.html">Inicial</a>
+                </li>
+                <li>
+                    <a href="introducao.html">Introdução</a>
+                </li>
+                <li>
+                    <a href="sobre.html">Sobre</a>
+                </li>
+                <li>
+                    <a href="exercicio.html">Exercícios</a>
+                </li>
+                <li>
+                    <a href="estrategias.html">Estrátegia</a>
+                </li>
+                <li>
+                    <a href="">Questionário</a>
+                </li>
+
+            </ul>
+        </div>
+    </header>
+
+    <section class="cadastro-page">
+        <div class="lado_esquerdo">
+
+        </div>
+        <div class=" lado_direito ">
+            <h1>Cadastre - Se</h1>
+
+            <div class="campos">
+                <div class="campo-form">
+                <label>Nome</label><br>
+                <input type="text" id="input_nome" placeholder="digite seu nome " > 
+                </div>
+
+                <div class="campo-form">
+                    <label> E-mail</label><br>
+                    <input type="text" id="input_email" placeholder=" email@gmail.com">
+                </div>
+                
+                <div class="campo-form">
+                <label>Senha</label><br>
+                <input type="password" id="input_senha" placeholder="*****">
+                </div>
+
+                <div class="campo-form">
+                    <label>Confirmar senha</label><br>
+                    <input type="text" id="input_confirmar" placeholder="*****" >
+                </div>
+
+                <div class="botao_cadastrar">
+                    <button onclick="cadastrar()">cadastrar</button>
+                </div>
+              
+            </div>        
+        </div>       
+    </section>
     
 </body>
 </html>

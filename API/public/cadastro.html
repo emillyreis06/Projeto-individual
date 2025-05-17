@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cadastro</title>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Reismove</h1>
+            <ul class="navbar">
+                <li>
+                    <a href="index.html">Inicial</a>
+                </li>
+                <li>
+                    <a href="introducao.html">Introdução</a>
+                </li>
+                <li>
+                    <a href="sobre.html">Sobre</a>
+                </li>
+                <li>
+                    <a href="exercicio.html">Exercícios</a>
+                </li>
+                <li>
+                    <a href="estrategias.html">Estrátegia</a>
+                </li>
+                <li>
+                    <a href="">Questionário</a>
+                </li>
+
+            </ul>
+        </div>
+    </header>
+
+    <section class="cadastro-page">
+        <div class="lado_esquerdo">
+
+        </div>
+        <div class=" lado_direito ">
+            <h1>Cadastre - Se</h1>
+
+            <div class="campos">
+                <div class="campo-form">
+                <label>Nome</label><br>
+                <input type="text" id="input_nome" placeholder="digite seu nome " > 
+                </div>
+
+                <div class="campo-form">
+                    <label> E-mail</label><br>
+                    <input type="text" id="input_email" placeholder=" email@gmail.com">
+                </div>
+                
+                <div class="campo-form">
+                <label>Senha</label><br>
+                <input type="password" id="input_senha" placeholder="*****">
+                </div>
+
+                <div class="campo-form">
+                    <label>Confirmar senha</label><br>
+                    <input type="password" id="input_confirmar" placeholder="*****" >
+                </div>
+
+                <div class="botao_cadastrar">
+                    <button onclick="cadastrar()">cadastrar</button>
+                </div>
+              
+            </div>        
+        </div>       
+    </section>
+
+    <div class="card_erro" id="cardErro">
+       <div id="div_mensagem"></div>
+      </div>
+
+    
+    
+</body>
+</html>
+<script>
+
+  function cadastrar() {
+
+    var nomeVar = input_nome.value;
+    var emailVar = input_email.value;
+    var senhaVar = input_senha.value;
+    var confirmarVar = input_confirmar.value;
+
+
+
+    // Verificando se há algum campo em branco
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmarVar == "" 
+    ) {
+      cardErro.style.display = "block";
+      div_mensagem.innerHTML =
+        "Preencha todos os campos para efetivar o cadastro";
+      return false;
+
+    } else if (nomeVar.length < 1){
+        cardErro.style.display = "block";
+        div_mensagem.innerHTML =
+        "Informe um nome válido";
+        return false;
+
+    }else if (senhaVar != confirmarVar){
+        cardErro.style.display = "block";
+        div_mensagem.innerHTML =
+        "Senha incorreta";
+        return false;
+
+    } else if (!emailVar.includes("@")){
+        cardErro.style.display = "block";
+        div_mensagem.innerHTML =
+        "Informe um email válido ( deve possuir @)";
+        return false;
+
+    } else if (senhaVar.length < 6){
+        cardErro.style.display = "block";
+        div_mensagem.innerHTML =
+        "Informe uma senha válida (deve conter ao menos 6 caracteres)";
+        return false;
+    }
+    
+    else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+        confirmarServer: confirmarVar
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          div_mensagem.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");
+
+          limparFormulario();
+       
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    
+      });
+
+    return false;
+  }
+
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+</script>

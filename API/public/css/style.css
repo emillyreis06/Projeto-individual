@@ -225,6 +225,7 @@ button:hover{
 
 .card_erro {
   display: none;
+  position: relative;
   background-color: #fdd;
   border: 1px solid red;
   padding: 10px;

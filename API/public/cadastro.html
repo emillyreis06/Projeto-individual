@@ -86,7 +86,7 @@
     var nomeVar = input_nome.value;
     var emailVar = input_email.value;
     var senhaVar = input_senha.value;
-    var confirmarVar = input_confirmar.value;
+    var confirmarSenhaVar = input_confirmar.value;
 
 
 
@@ -95,7 +95,7 @@
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmarVar == "" 
+      confirmarSenhaVar == "" 
     ) {
       cardErro.style.display = "block";
       div_mensagem.innerHTML =
@@ -108,7 +108,7 @@
         "Informe um nome válido";
         return false;
 
-    }else if (senhaVar != confirmarVar){
+    }else if (senhaVar != confirmarSenhaVar){
         cardErro.style.display = "block";
         div_mensagem.innerHTML =
         "Senha incorreta";
@@ -143,7 +143,7 @@
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        confirmarServer: confirmarVar
+        confirmarServer: confirmarSenhaVar
       }),
     })
       .then(function (resposta) {

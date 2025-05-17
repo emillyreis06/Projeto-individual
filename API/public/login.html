@@ -52,11 +52,12 @@
                 <button onclick="entrar()">entrar</button>
         </div>
     </div>
-     <div class="lado_direito">
-
-        </div>
-
+     <div class="lado_direito"></div>
     </section>
+      <div class="card_erro" id="cardErro">
+       <div id="div_mensagem"></div>
+      </div>
+
 </body>
 </html>
 <script>
@@ -66,7 +67,7 @@ function entrar() {
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Preencha todos os campos para realizar o login";
+            div_mensagem.innerHTML = "Preencha todos os campos para realizar o login";
         }
         else {
         
@@ -80,7 +81,7 @@ function entrar() {
                 senhaServer: senhaVar
             })
         }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
+            console.log("ESTOU NO THEN DO login()!")
 
             if (resposta.ok) {
                 console.log(resposta);
@@ -100,11 +101,12 @@ function entrar() {
                 });
 
             } else {
-                mensagem_erro.innerHTML = `Email ou senha incorretos`
+                div_mensagem.innerHTML = `Email ou senha incorretos`
                 console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {
                     console.error(texto);
+                    return false;
                 });
             }
 

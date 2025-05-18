@@ -27,15 +27,13 @@ header .container .navbar  {
     display: flex;
     flex-direction: row;
     list-style-type: none;
-    margin-left: 95px;
-    gap: 20px;
-    margin-top: 35px;
+    margin-left: 6rem;
+    gap: 1.25rem;
+    margin-top: 2.2rem;
 }
 .inicio .banner{
     background-color: #67C953;
-    height: 400px;
-
-
+    height: 25rem;
 }
 
 .banner-texto  h1 {
@@ -43,12 +41,12 @@ header .container .navbar  {
     color: #043A06;
     display:flex ;
     justify-content: flex-start;
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight:900;
     text-align: center;
-    margin: 40px;
-    padding: 60px;
-    margin-left: 200px;
+    margin: 2.5rem;
+    padding: 3.75rem;
+    margin-left: 12.5rem;
 }
 
 .banner-texto P {
@@ -56,13 +54,13 @@ header .container .navbar  {
     position: absolute;
     text-align: center;
     justify-content: flex-start;
-    font-size: 20px;
-    margin-left:265px;
-    top: 350px ;
+    font-size: 1.25rem;
+    margin-left: 16.56rem;
+    top: 21.875rem;
 }
 
 .botao_inicial{
-    margin-left: 300px;
+    margin-left: 18.8rem;
 }
 
 .botao_inicial button {
@@ -70,12 +68,12 @@ header .container .navbar  {
     color: black;
     background: white;
     font-weight: bold;
-    width: 110px;
-    height: 40px;
-    font-size: 15px;
-    border-radius: 5px;
-    margin-left: 10px;
-    margin-top: 20px;
+    width: 6.9rem;
+    height: 2.5rem;
+    font-size: 0.94rem;
+    border-radius: 0.3rem;
+    margin-left: 0.6rem;
+    margin-top: 1.25rem;
     cursor: pointer;
 }
 
@@ -94,11 +92,13 @@ button:hover{
 
 .img_inicio{        
     position: relative;
-    top: -20px;
+    top: -1.25rem;
 }
 
 .img_inicio img{
-    width: 500px;
+     width: 100%;
+    max-width: 500px;
+    height: auto
 } 
 
 

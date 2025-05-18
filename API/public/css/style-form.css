@@ -1,0 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cabin:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-color: #f4f0ea;
+    color: #043A06;
+    font-family: "Barlow", sans-serif;
+    
+}
+
+
+
+header{
+background-color: #1cc21c9c;
+color: #fff;
+text-align: center;
+padding: 2rem; /*relativo, deixa responsivo*/
+background: linear-gradient(135deg, #25ac14, #5cd65c);
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /*sombra*/
+}
+
+header p {
+    font-size: 1.2rem;
+    font-weight:300;
+}
+
+.conteudo {
+    max-width: 40rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    margin: 2rem auto;
+}
+
+
+input {
+    accent-color: #1cc21c;
+}
+
+section{
+    padding: 0;
+    border-bottom: 2px solid #ddd; /*cria uma linha separando as perguntas*/
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+label {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+}
+
+button {
+    width: 18rem;
+    height: 2rem;
+    display: block;
+    margin: 2rem auto;
+    background: #25ac149c;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5rem;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.20); /*sombra*/
+    background: linear-gradient(135deg, #25ac14, #5cd65c);
+}
+
+button:hover{
+    transform: scale(1.05);
+}
+

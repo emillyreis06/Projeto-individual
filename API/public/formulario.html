@@ -15,7 +15,7 @@
     <div class="conteudo">
     <section class="pergunta1">
         <h3>1. Qual a sua faixa etária?</h3>
-            <select name="" id="faixa_etaria">
+            <select name="" id="select_faixa_etaria">
                 <option value="#">Selecione sua idade</option>
                 <option value="15-20">15-20</option>
                 <option value="20-25">20-25</option>
@@ -27,7 +27,7 @@
 
     <section class="pergunta2">
         <h3>2.Você se identifica com qual genêro?</h3>
-        <select name="" id="genero">
+        <select name="" id="select_genero">
             <option value="#">Selecione genêro</option>
             <option value="feminino">Feminino</option>
             <option value="masculino">Masculino</option>
@@ -45,7 +45,7 @@
     
     <section class="pergunta4"> 
         <h3>4.Se sim, qual ?</h3>
-        <select name="" id="ativFisica">
+        <select name="" id="select_ativFisica">
             <option value="#">Selecione a atividade física</option>
             <option value="musculacao">Musculação</option>
             <option value="crossfit">Crossfit</option>
@@ -56,7 +56,7 @@
 
     <section class="pergunta5">
         <h3>5. Com que frequência você pratica atividade física?</h3>
-        <select name="" id="frequencia">
+        <select name="" id="select_freq">
             <option value="#">Selecione</option>
             <option value="1-3">1 a 3 vezes por semana</option>
             <option value="4-6">4 a 6 vezes por semana</option>
@@ -67,7 +67,7 @@
 
       <section class="pergunta6">
         <h3>6. Qual o seu tipo de treino preferido?</h3>
-        <select name="" id="treinoPref">
+        <select name="" id="select_treinoPref">
             <option value="#">Selecione</option>
             <option value="posterior">Treino de posterior</option>
             <option value="quadriceps">Treino de quadríceps</option>
@@ -79,7 +79,7 @@
 
           <section class="pergunta7">
         <h3>7. Por que você pratica atividade física?</h3>
-        <select name="" id="objetivo">
+        <select name="" id="select_objetivo">
             <option value="#">Selecione treino</option>
             <option value="massa">Ganhar massa magra</option>
             <option value="emagrecer">Emagrecer</option>
@@ -93,12 +93,83 @@
             <button onclick="treino()">Gerar Treino</button>
         </div>
     </div>
+
+    <div class="card" id="card">
+       <div id="div_mensagem"></div>
+      </div>
 </body>
 </html>
 
 <script>
     function treino(){
-     
+     var faixaEtaria = select_faixa_etaria.value;
+     var genero = select_genero.value;
+     var ativFisica = select_ativFisica.value;
+     var frequencia = select_freq.value
+     var treinoPref = select_treinoPref.value;
+     var obj = select_objetivo.value;
+
+     if (faixaEtaria == "" || genero == "" || ativFisica == "" ||
+         frequencia == "" || treinoPref == "" || obj == ""){
+             card.style.display = "block";
+             div_mensagem.innerHTML = "Preencha todos os campos para obter seu treino "
+             return false; // impede que os dados sejam enviados para o back se houver algum erro
+     }
+
+     else if (treinoPref == "posterior"){
+        // matriz
+         treinosPosterior = [
+             ['Stiff','Cadeira-Flexora', 'Mesa-Flexora', 'Flexora unilateral'],
+             ['Stiff com halter', 'Gemêos', 'Cadeira- Flexora','Levantamento terra sumô']
+        ]
+
+        var aleatorio = parseInt(Math.random() * treinosPosterior.length);
+        var resultado = treinosPosterior[aleatorio]
+        card.style.display = "block";
+        div_mensagem.innerHTML = `${resultado}`
+    }
+    else if (treinoPref == "quadriceps"){
+        treinosQuadriceps = [
+            ['Cadeira-Extensora', 'Agachamento no smith', 'Leg-Press','Afundo com halter', 'Passada'],
+            ['Cadeira Abdutora', 'Cadeira Adutora', 'Hack', 'Leg-Press', 'Agachamento Búlgaro']
+        ]
+
+        var aleatorio = parseInt(Math.random()* treinosQuadriceps.length)
+        var resultado = treinosQuadriceps[aleatorio]
+        card.style.display = "block";
+        div_mensagem.innerHTML = `${resultado}`
+    } 
+    else if (treinoPref == "costas"){
+        treinosCostas = [
+            ['Puxada alta', 'Triangulo na polia', 'Serrote', 'Remada curvada'], 
+            ['Barra fixa', 'Remada baixa','Remada com corda na polia','Puxada na polia']
+        ]
+
+        var aleatorio = parseInt(Math.random()* treinosCostas.length);
+        var resultado = treinosCostas[aleatorio]
+        card.style.display = "block";
+        div_mensagem.innerHTML = `${resultado}`
+    }
+    else if (treinoPref == "braco"){
+        treinosBraco = [
+            ['Triceps corda', 'Triceps testa','Triceps no banco', 'Elevação lateral'],
+            ['Rosca com corda', 'Rosca martelo', 'Rosca com barra W', 'Rosca com halteres no banco']
+        ]
+        var aleatorio = parseInt(Math.random()* treinosBraco.length)
+        var resultado = treinosBraco[aleatorio]
+        card.style.display = "block";
+        div_mensagem.innerHTML = `${resultado}`
+    } 
+    else if (treinoPref == "ombro") {
+        treinosOmbro = [
+            ['Elevação lateral', 'Desenvolvimento máquina','Desenvolvimento com halteres', 'Elevação frontal'],
+            ['Encolhimento de ombro', 'Elevação lateral', 'Crucifixo inverso', 'Remada alta']
+        ]
+        var aleatorio = parseInt(Math.random()* treinosOmbro.length)
+        var resultado = treinosOmbro[aleatorio]
+        card.style.display = "block";
+        div_mensagem.innerHTML = `${resultado}`
+    }
 
 
     }

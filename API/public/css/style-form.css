@@ -79,3 +79,14 @@ button:hover{
     transform: scale(1.05);
 }
 
+.card{
+  display: none;
+  justify-content: center;
+  border: 2px solid #25ac14;
+  padding: 10px;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  margin: 5rem ;
+  border-radius: 2rem;
+}

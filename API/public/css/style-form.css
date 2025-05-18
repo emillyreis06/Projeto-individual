@@ -40,11 +40,6 @@ header p {
     margin: 2rem auto;
 }
 
-
-input {
-    accent-color: #1cc21c;
-}
-
 section{
     padding: 0;
     border-bottom: 2px solid #ddd; /*cria uma linha separando as perguntas*/
@@ -54,9 +49,14 @@ h3{
     font-size: 1.5rem;
 }
 
-label {
-    font-size: 1.1rem;
-    padding: 0.5rem;
+select {
+    width: 20rem;
+    height: 2.1rem;
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*leve sombra*/
+    
 }
 
 button {

@@ -36,7 +36,7 @@
 
     <section class="pergunta3">
         <h3>3.Você pratica atividade física?</h3>
-         <select name="" id="pratica_ativFisica">
+         <select name="" id="select_pratica_ativFisica">
             <option value="#">Selecione </option>
             <option value="sim">Sim</option>
             <option value="nao">Não</option>
@@ -96,6 +96,7 @@
 
     <div class="card" id="card">
        <div id="div_mensagem"></div>
+       <button onclick="dash()" id="btn_dash" style="display: none;">Ver Resultados</button>
       </div>
 </body>
 </html>
@@ -103,16 +104,18 @@
 <script>
     function treino(){
      var faixaEtaria = select_faixa_etaria.value;
+     var pratica = select_pratica_ativFisica.value;
      var genero = select_genero.value;
      var ativFisica = select_ativFisica.value;
      var frequencia = select_freq.value
      var treinoPref = select_treinoPref.value;
      var obj = select_objetivo.value;
 
-     if (faixaEtaria == "" || genero == "" || ativFisica == "" ||
+     if (faixaEtaria == "" || pratica == "" || genero == "" || ativFisica == "" ||
          frequencia == "" || treinoPref == "" || obj == ""){
              card.style.display = "block";
              div_mensagem.innerHTML = "Preencha todos os campos para obter seu treino "
+             btn_dash.style.display = 'inline-block'
              return false; // impede que os dados sejam enviados para o back se houver algum erro
      }
 
@@ -127,6 +130,7 @@
         var resultado = treinosPosterior[aleatorio]
         card.style.display = "block";
         div_mensagem.innerHTML = `${resultado}`
+        btn_dash.style.display = 'inline-block'
     }
     else if (treinoPref == "quadriceps"){
         treinosQuadriceps = [
@@ -138,6 +142,7 @@
         var resultado = treinosQuadriceps[aleatorio]
         card.style.display = "block";
         div_mensagem.innerHTML = `${resultado}`
+        btn_dash.style.display = 'inline-block'
     } 
     else if (treinoPref == "costas"){
         treinosCostas = [
@@ -149,6 +154,7 @@
         var resultado = treinosCostas[aleatorio]
         card.style.display = "block";
         div_mensagem.innerHTML = `${resultado}`
+        btn_dash.style.display = 'inline-block'
     }
     else if (treinoPref == "braco"){
         treinosBraco = [
@@ -159,6 +165,7 @@
         var resultado = treinosBraco[aleatorio]
         card.style.display = "block";
         div_mensagem.innerHTML = `${resultado}`
+        btn_dash.style.display = 'inline-block'
     } 
     else if (treinoPref == "ombro") {
         treinosOmbro = [
@@ -169,8 +176,46 @@
         var resultado = treinosOmbro[aleatorio]
         card.style.display = "block";
         div_mensagem.innerHTML = `${resultado}`
+        btn_dash.style.display = 'inline-block'
     }
 
 
-    }
+        fetch("/formulario/gerarTreino", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+
+        faixaEtariaServer: faixaEtaria,
+        praticaServer: pratica,
+        generoServer: genero,
+        ativFisicaServer: ativFisica,
+        frequenciaServer: frequencia,
+        treinoPrefServer: treinoPref,
+        objServer: obj
+        
+      }),
+    })
+        .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (!resposta.ok) {
+          cardErro.style.display = "block";
+          div_mensagem.innerHTML =
+            "Houve um erro ao tentar preencher suas informações";   
+        } 
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    
+      });
+
+    return false;
+  }
+
+  function dash(){
+    window.location.href = "./dashboard/cards.html";
+  }
+
 </script>

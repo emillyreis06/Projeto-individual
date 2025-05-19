@@ -1,4 +1,4 @@
-
+var formularioModel = require("../models/formularioModel");
 
 function treino(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html

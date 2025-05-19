@@ -29,8 +29,8 @@
         <h3>2.Você se identifica com qual genêro?</h3>
         <select name="" id="select_genero">
             <option value="#">Selecione genêro</option>
-            <option value="feminino">Feminino</option>
-            <option value="masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Masculino">Masculino</option>
         </select>
     </section>
 
@@ -38,8 +38,8 @@
         <h3>3.Você pratica atividade física?</h3>
          <select name="" id="select_pratica_ativFisica">
             <option value="#">Selecione </option>
-            <option value="sim">Sim</option>
-            <option value="nao">Não</option>
+            <option value="Sim">Sim</option>
+            <option value="Não">Não</option>
         </select>
     </section>
     
@@ -47,10 +47,10 @@
         <h3>4.Se sim, qual ?</h3>
         <select name="" id="select_ativFisica">
             <option value="#">Selecione a atividade física</option>
-            <option value="musculacao">Musculação</option>
-            <option value="crossfit">Crossfit</option>
-            <option value="esportes">Esportes</option>
-            <option value="outro">Outro</option>
+            <option value="Musculação">Musculação</option>
+            <option value="Crossfit">Crossfit</option>
+            <option value="Esportes">Esportes</option>
+            <option value="Outro">Outro</option>
         </select>
     </section>
 
@@ -58,10 +58,10 @@
         <h3>5. Com que frequência você pratica atividade física?</h3>
         <select name="" id="select_freq">
             <option value="#">Selecione</option>
-            <option value="1-3">1 a 3 vezes por semana</option>
-            <option value="4-6">4 a 6 vezes por semana</option>
-            <option value="todos">Todos os dias da semana</option>
-            <option value="nao">Não prático</option>
+            <option value="1 a 3 vezes por semana">1 a 3 vezes por semana</option>
+            <option value="4 a 6 vezes por semana">4 a 6 vezes por semana</option>
+            <option value="Todos os dias da semana">Todos os dias da semana</option>
+            <option value="Não prático">Não prático</option>
         </select>
     </section>
 
@@ -69,11 +69,11 @@
         <h3>6. Qual o seu tipo de treino preferido?</h3>
         <select name="" id="select_treinoPref">
             <option value="#">Selecione</option>
-            <option value="posterior">Treino de posterior</option>
-            <option value="quadriceps">Treino de quadríceps</option>
-            <option value="costas">Treino de costas</option>
-            <option value="braco">Treino de bíceps/tríceps</option>
-            <option value="ombro">Treino de ombro</option>
+            <option value="Treino de posterior">Treino de posterior</option>
+            <option value="Treino de quadríceps">Treino de quadríceps</option>
+            <option value="Treino de costas">Treino de costas</option>
+            <option value="Treino de bíceps/tríceps">Treino de bíceps/tríceps</option>
+            <option value="Treino de ombro">Treino de ombro</option>
         </select>
     </section>
 
@@ -81,11 +81,11 @@
         <h3>7. Por que você pratica atividade física?</h3>
         <select name="" id="select_objetivo">
             <option value="#">Selecione treino</option>
-            <option value="massa">Ganhar massa magra</option>
-            <option value="emagrecer">Emagrecer</option>
-            <option value="bem_estar">Bem estar físico e mental</option>
-            <option value="saude">Saúde</option>
-            <option value="outro">Outro</option>
+            <option value="Ganhar massa magra">Ganhar massa magra</option>
+            <option value="Emagrecer">Emagrecer</option>
+            <option value="Bem estar físico e mental">Bem estar físico e mental</option>
+            <option value="Saúde">Saúde</option>
+            <option value="Outro">Outro</option>
         </select>
     </section>
 
@@ -119,7 +119,7 @@
              return false; // impede que os dados sejam enviados para o back se houver algum erro
      }
 
-     else if (treinoPref == "posterior"){
+     else if (treinoPref == "Treino de posterior"){
         // matriz
          treinosPosterior = [
              ['Stiff','Cadeira-Flexora', 'Mesa-Flexora', 'Flexora unilateral'],
@@ -132,7 +132,7 @@
         div_mensagem.innerHTML = `${resultado}`
         btn_dash.style.display = 'inline-block'
     }
-    else if (treinoPref == "quadriceps"){
+    else if (treinoPref == "Treino de quadríceps"){
         treinosQuadriceps = [
             ['Cadeira-Extensora', 'Agachamento no smith', 'Leg-Press','Afundo com halter', 'Passada'],
             ['Cadeira Abdutora', 'Cadeira Adutora', 'Hack', 'Leg-Press', 'Agachamento Búlgaro']
@@ -144,7 +144,7 @@
         div_mensagem.innerHTML = `${resultado}`
         btn_dash.style.display = 'inline-block'
     } 
-    else if (treinoPref == "costas"){
+    else if (treinoPref == "Treino de costas"){
         treinosCostas = [
             ['Puxada alta', 'Triangulo na polia', 'Serrote', 'Remada curvada'], 
             ['Barra fixa', 'Remada baixa','Remada com corda na polia','Puxada na polia']
@@ -156,7 +156,7 @@
         div_mensagem.innerHTML = `${resultado}`
         btn_dash.style.display = 'inline-block'
     }
-    else if (treinoPref == "braco"){
+    else if (treinoPref == "Treino de bíceps/tríceps"){
         treinosBraco = [
             ['Triceps corda', 'Triceps testa','Triceps no banco', 'Elevação lateral'],
             ['Rosca com corda', 'Rosca martelo', 'Rosca com barra W', 'Rosca com halteres no banco']
@@ -167,7 +167,7 @@
         div_mensagem.innerHTML = `${resultado}`
         btn_dash.style.display = 'inline-block'
     } 
-    else if (treinoPref == "ombro") {
+    else if (treinoPref == "Treino de ombro") {
         treinosOmbro = [
             ['Elevação lateral', 'Desenvolvimento máquina','Desenvolvimento com halteres', 'Elevação frontal'],
             ['Encolhimento de ombro', 'Elevação lateral', 'Crucifixo inverso', 'Remada alta']
@@ -188,8 +188,8 @@
       body: JSON.stringify({
 
         faixaEtariaServer: faixaEtaria,
-        praticaServer: pratica,
         generoServer: genero,
+        praticaServer: pratica,
         ativFisicaServer: ativFisica,
         frequenciaServer: frequencia,
         treinoPrefServer: treinoPref,

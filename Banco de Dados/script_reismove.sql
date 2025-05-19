@@ -26,7 +26,10 @@ constraint chkFreq  check ( frequencia in ("1 a 3 vezes por semana", "4 a 6 veze
 treino_preferido varchar (45),
 constraint  chkTreino check (treino_preferido in ("Treino de posterior", "Treino de quadríceps", "Treino de costas","Treino de bíceps/tríceps", "Treino de ombro")),
 obj varchar (45),
-constraint chkObj check (obj in ("Ganhar massa magra", "Emagrecer", "Bem estar físico e mental", "Saúde", "Estética", "Outro"))
+constraint chkObj check (obj in ("Ganhar massa magra", "Emagrecer", "Bem estar físico e mental", "Saúde", "Estética", "Outro")),
+fkUsuario int,
+constraint fkFormUser foreign key (fkUsuario) references usuario (idUsuario)
 );
 
-select * from usuario;'
+select * from usuario;
+select * from formulario;

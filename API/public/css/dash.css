@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cabin:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #f4f0ea;
+    font-family: "Barlow", sans-serif;
+}
+
+.div_header {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #25ac14, #5cd65c);
+}
+
+.indicadores {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /*sombra*/
+
+}
+
+#totalresp, #ativFisica, #objetivo {
+    display: flex;
+    width: 10rem;
+    height: 8rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.2rem;
+}
+
+#myChart, #myChart2 {
+    max-width: 50%;
+    height: 5rem;
+}

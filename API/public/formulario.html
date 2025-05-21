@@ -102,6 +102,7 @@
 </html>
 
 <script>
+         var fkUsuario = sessionStorage.ID_USUARIO
      
     function treino(){
      var faixaEtaria = select_faixa_etaria.value;
@@ -111,7 +112,8 @@
      var frequencia = select_freq.value
      var treinoPref = select_treinoPref.value;
      var obj = select_objetivo.value;
-     var idUsuario
+
+     console.log (fkUsuario)
     
 
      if (faixaEtaria == "" || pratica == "" || genero == "" || ativFisica == "" ||
@@ -196,7 +198,8 @@
         ativFisicaServer: ativFisica,
         frequenciaServer: frequencia,
         treinoPrefServer: treinoPref,
-        objServer: obj
+        objServer: obj,
+        fkUsuarioServer: fkUsuario
         
       }),
     })

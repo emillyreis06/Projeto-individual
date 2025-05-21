@@ -9,11 +9,12 @@ function treino(req, res) {
     var frequencia = req.body.frequenciaServer;
     var treinoPref = req.body.treinoPrefServer;
     var obj = req.body.objServer;
+    var fkUsuario = req.body.fkUsuarioServer;
 
-    
+
 
     // Faça as validações dos valores
-    if (faixaEtaria== undefined) {
+    if (faixaEtaria == undefined) {
         res.status(400).send("Faixa etária indefinida");
     } else if (pratica == undefined) {
         res.status(400).send("Campo para validar se pratica atividade física indefinido");
@@ -29,10 +30,10 @@ function treino(req, res) {
         res.status(400).send("Seu objetivo esta indefinido");
     } else {
 
-    
+
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        formularioModel.treino( faixaEtaria,pratica, genero, ativFisica, frequencia,treinoPref,obj)
+        formularioModel.treino(faixaEtaria, genero, pratica, ativFisica, frequencia, treinoPref, obj, fkUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);

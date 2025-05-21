@@ -8,6 +8,4 @@ router.post("/gerarTreino", function (req, res) {
     formularioController.treino(req, res);
 })
 
-
-
 module.exports = router;

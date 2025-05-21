@@ -31,5 +31,10 @@ fkUsuario int,
 constraint fkFormUser foreign key (fkUsuario) references usuario (idUsuario)
 );
 
+
+
 select * from usuario;
-select * from formulario ;
+select * from formulario;
+
+insert 
+

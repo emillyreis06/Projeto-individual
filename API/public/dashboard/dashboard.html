@@ -29,13 +29,15 @@
 
 
     <!-- gráficos-->
-     <div>
+     <div class="graficos">
+        <div class="graficoIdade">
         <canvas id="myChart"></canvas>
       </div>
 
-      <div>
+      <div class="graficoGenero">
         <canvas id="myChart2"></canvas>
       </div>
+     </div>
 
       
 <script>
@@ -52,8 +54,8 @@
         labels: labels,
         datasets: [{
             label: 'Faixa Etária',
-            backgroundColor: 'rgb(255,99,132)',
-            borderColor: 'rgb(255,99,132)',
+            backgroundColor:  'rgba(0, 0, 128)',
+            borderColor:  'rgba(0, 0, 128)',
             barPercentage: 1, // largura das colunas (menor = mais finas)
             categoryPercentage: 0.5, // espaçamento entre elas
             data: [12,8,5,2,4],
@@ -72,8 +74,8 @@
 
 
     const labels2 = [
-      
-        
+      'Feminino',
+      'Masculino' 
     ];
 
 
@@ -82,17 +84,15 @@
       datasets: [
         {
           label: 'Feminino',
-          backgroundColor: 'rgb(54, 162, 235)',
-          borderColor: 'rgb(54, 162, 235)',
-          categoryPercentage: 1.0,
-           barPercentage: 1.0,
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
           data: [15]
           
         },
         {
-          label: 'Masculin0',
-          backgroundColor: 'rgba(0, 200, 0, 0.5)',
-          borderColor: 'rgba(0, 200, 0, 0.5)',
+          label: 'Masculino',
+          backgroundColor: 'rgb(54, 162, 235)',
+          borderColor: 'rgb(54, 162, 235)',
           data: [10]
           
         }

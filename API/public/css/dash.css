@@ -38,7 +38,19 @@ body {
     padding: 1.2rem;
 }
 
-#myChart, #myChart2 {
-    max-width: 50%;
+.graficos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+    flex-wrap: wrap; /* permite que eles quebrem linha se a tela for pequena */
+}
 
+.graficoIdade {
+    width: 40rem;
+}
+
+.graficoGenero {
+    width: 40rem;
+    height: 25rem;
 }

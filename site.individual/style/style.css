@@ -32,7 +32,7 @@ header .container .navbar  {
     margin-top: 35px;
 }
 .inicio .banner{
-    background-color: #67C953;
+    background: linear-gradient(135deg, #25ac14, #5cd65c);
     height: 400px;
 
 

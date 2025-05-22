@@ -32,7 +32,7 @@ header .container .navbar  {
     margin-top: 2.2rem;
 }
 .inicio .banner{
-    background-color: #67C953;
+    background: linear-gradient(135deg, #25ac14, #5cd65c);
     height: 25rem;
 }
 
@@ -236,3 +236,27 @@ button:hover{
   border-radius: 5px;
 }
 
+
+
+/*tela - exercicios*/
+
+.titulo_exercicios{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.titulo_exercicios h1 {
+    color: #083A0B;
+    font-size: 2.5rem;
+    border: solid 2px blue;
+}
+
+
+.titulo_exercicios img {
+    display: flex;
+    width: 25rem;
+    justify-content: center;
+    align-items: center;
+
+}

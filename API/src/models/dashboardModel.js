@@ -38,10 +38,38 @@ function obterObjetivoComum() {
     return database.executar(instrucaoSql);
 }
 
+//exibir quantidade de pessoas por genero
+function obterGenero() {
+    var instrucaoSql = `
+    SELECT genero, count(*) AS 'Feminino'
+    FROM formulario
+    WHERE pratica_ativFisica = 'Sim'
+    GROUP BY genero;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+//faixa etaria
+function obterFaixaEtaria() {
+    var instrucaoSql = `
+    SELECT faixa_etaria, COUNT(*) as 'Faixa Etária'
+    FROM formulario
+    WHERE pratica_ativFisica = 'Sim'
+    GROUP BY faixa_etaria;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
+
 
 
 module.exports = {
     obterTotalRespostas,
     obterTotalAtiv,
-    obterObjetivoComum
+    obterObjetivoComum,
+    obterGenero,
+    obterFaixaEtaria
 };

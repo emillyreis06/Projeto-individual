@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
-<body>
+<body onload="obterDados()">
     <div class="div_header">
         <h1>Métricas</h1>
     </div>
@@ -16,14 +16,17 @@
     <div class="indicadores">
         <div id="totalresp">
             <h3>Total de Respostas:</h3>
+            <div id="div_totalResp"></div>
         </div>
 
         <div id="ativFisica">
             <h3>Praticam Atividade Física:</h3>
+            <div id="div_praticam"></div>
         </div>
 
         <div id="objetivo">
             <h3>Objetivo Principal:</h3>
+            <div id="div_obj"></div>
         </div>
     </div>
 
@@ -31,99 +34,121 @@
     <!-- gráficos-->
      <div class="graficos">
         <div class="graficoIdade">
-        <canvas id="myChart"></canvas>
+        <canvas id="barra"></canvas>
       </div>
 
       <div class="graficoGenero">
-        <canvas id="myChart2"></canvas>
+        <canvas id="pizza"></canvas>
       </div>
      </div>
 
-      
-<script>
-    const labels = [
-        '15-20',
-        '20-25',
-        '25-30',
-        '30-35',
-        '40+',
-        
-    ];
-
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'Faixa Etária',
-            backgroundColor:  'rgba(0, 0, 128)',
-            borderColor:  'rgba(0, 0, 128)',
-            barPercentage: 1, // largura das colunas (menor = mais finas)
-            categoryPercentage: 0.5, // espaçamento entre elas
-            data: [12,8,5,2,4],
-        },
-        
-    ]
-    };
-
-    const config = {
-        type:'bar',
-        data: data,
-        options: {}
-
-    };
-
-
-
-    const labels2 = [
-      'Feminino',
-      'Masculino' 
-    ];
-
-
-    const data2 = {
-      labels: labels,
-      datasets: [
-        {
-          label: 'Feminino',
-          backgroundColor: 'rgb(255, 99, 132)',
-          borderColor: 'rgb(255, 99, 132)',
-          data: [15]
-          
-        },
-        {
-          label: 'Masculino',
-          backgroundColor: 'rgb(54, 162, 235)',
-          borderColor: 'rgb(54, 162, 235)',
-          data: [10]
-          
-        }
-
-        ]
-    };
-    
-    const config2 = {
-        type:'pie',
-        data: data2,
-        options: {}
-
-    };
-    
-    
-
-</script>
-
-
-
-<script>
-    const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
-
-    const myChart2 = new Chart(
-        document.getElementById('myChart2'),
-        config2
-    );
-</script>
-
 </body>
 </html>
+<script>
+
+   // Declaração global dos gráficos para poder atualizar depois
+    let graficoBarra;  
+    let graficoPizza;
+
+function obterDados(){
+ 
+fetch('/totalResp') // busca dados do servidor(formulario)
+  .then(res => res.json()) // resposta do servidor
+  .then(totalResp => {
+    div_totalResp.innerHTML = totalResp[0].div_totalResp// retorna os dados reais 
+      })
+    .catch(function(err){
+    console.log(err);
+  })
+
+
+  fetch('/totalAtiv') // busca dados do servidor(formulario)
+  .then(res => res.json()) // resposta do servidor
+  .then(totalPraticam => {
+    div_praticam.innerHTML = totalPraticam[0].div_praticam // retorna os dados reais 
+      })
+    .catch(function(err){
+    console.log(err);
+  })
+
+    fetch('/ObjetivoComum') // busca dados do servidor(formulario) atráves da rota
+  .then(res => res.json()) // resposta do servidor
+  .then(totalObj => {
+   div_obj.innerHTML = totalObj[0].div_obj // retorna os dados reais 
+      })
+    .catch(function(err){
+    console.log(err);
+  })
+
+    fetch('/faixaEtaria') // busca dados do servidor(formulario)
+  .then(res => res.json()) // resposta do servidor
+  .then(totalIdade => {
+    
+    var labels = [];
+    var dados = [];
+
+    for(var i = 0; i < totalIdade.length; i ++){
+      labels.push(totalIdade[i].faixaEtaria); // faixa e quantidade são o apelido q esta no select
+      dados.push(totalIdade[i].quantidade)
+    }
+    
+  var ctx = document.getElementById('barra').getContext('2d');
+  var myChart = new Chart(ctx, {
+      type: 'bar', 
+      data: { 
+          labels: labels, 
+          datasets: [{ 
+              label: 'Faixa Etária', 
+              data: dados,
+              backgroundColor: [
+                  'rgb(255, 99, 132)', 
+              ],
+              borderColor: [
+                  'rgb(255, 99, 132)', 
+              ],
+              borderWidth: 1 
+          }]
+      },
+  }); 
+      })
+    .catch(function(err){
+    console.log(err);
+  })
+
+  fetch('/genero') // busca dados do servidor(formulario)
+  .then(res => res.json()) // resposta do servidor
+  .then(totalGenero => {
+
+    var labels = [];
+    var dados = [];
+
+    for (var i = 0; i < totalGenero.length; i++){
+      labels.push(totalGenero[i].genero); 
+      dados.push(totalGenero[i].quantidade)
+    }
+
+  var ctx = document.getElementById('pizza').getContext('2d');
+  var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+          labels,
+          datasets: [{ 
+              data: dados,
+              backgroundColor: [
+                  'rgb(255, 99, 132)',
+                  'rgb(54, 162, 235)'
+              ],
+              borderColor: [
+                  'rgb(255, 99, 132)', 
+                  'rgb(54, 162, 235)'
+              ],
+              borderWidth: 1 
+          }]
+      },
+  });
+      })
+    .catch(function(err){
+    console.log(err);
+  })
+}
+</script>

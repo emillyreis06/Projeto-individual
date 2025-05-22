@@ -19,5 +19,19 @@ router.get("/ObjetivoComum", function (req, res) {
   dashboardController.obterObjetivoComum(req, res);
 });
 
+// rota para faixa etária
+router.get("/faixaEtaria", function (req, res) {
+  dashboardController.obterFaixaEtaria(req, res);
+});
+
+
+// rota para genero
+router.get("/genero", function (req, res) {
+  dashboardController.obterGenero(req, res);
+});
+
+
+
+
 
 module.exports = router;

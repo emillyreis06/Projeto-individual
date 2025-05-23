@@ -3,6 +3,7 @@ var dashboardModel = require("../models/dashboardModel");
 function obterTotalRespostas(req, res) {
     dashboardModel.obterTotalRespostas()
     .then(function (resultado) {
+        console.log(resultado)
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -20,6 +21,7 @@ function obterTotalAtiv(req, res) {
     dashboardModel.obterTotalAtiv()
     .then(function (resultado) {
         if (resultado.length > 0) {
+            console.log(resultado)
             res.status(200).json(resultado);
         } else {
             res.status(204).send("Nenhum resultado encontrado!")
@@ -36,6 +38,7 @@ function obterObjetivoComum(req, res) {
     dashboardModel.obterObjetivoComum()
     .then(function (resultado) {
         if (resultado.length > 0) {
+            console.log(resultado)
             res.status(200).json(resultado);
         } else {
             res.status(204).send("Nenhum resultado encontrado!")
@@ -51,6 +54,7 @@ function obterGenero(req, res) {
     dashboardModel.obterGenero()
     .then(function (resultado) {
         if (resultado.length > 0) {
+            console.log(resultado)
             res.status(200).json(resultado);
         } else {
             res.status(204).send("Nenhum resultado encontrado!")
@@ -66,6 +70,7 @@ function obterFaixaEtaria(req, res) {
     dashboardModel.obterFaixaEtaria()
     .then(function (resultado) {
         if (resultado.length > 0) {
+            console.log(resultado)
             res.status(200).json(resultado);
         } else {
             res.status(204).send("Nenhum resultado encontrado!")

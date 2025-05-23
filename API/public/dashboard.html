@@ -52,49 +52,61 @@
 
 function obterDados(){
  
-fetch('/totalResp') // busca dados do servidor(formulario)
+fetch('/dashboard/totalResp') // busca dados do servidor(formulario)
   .then(res => res.json()) // resposta do servidor
   .then(totalResp => {
-    div_totalResp.innerHTML = totalResp[0].div_totalResp// retorna os dados reais 
+  console.log(totalResp);
+    div_totalResp.innerHTML = totalResp[0]['Total_de_Respostas']// retorna os dados reais 
       })
     .catch(function(err){
-    console.log(err);
+    console.log(err)
+    console.log("Erro no total de respostas");
   })
 
 
-  fetch('/totalAtiv') // busca dados do servidor(formulario)
+  fetch('/dashboard/totalAtiv') // busca dados do servidor(formulario)
   .then(res => res.json()) // resposta do servidor
   .then(totalPraticam => {
-    div_praticam.innerHTML = totalPraticam[0].div_praticam // retorna os dados reais 
+  console.log(totalPraticam);
+    div_praticam.innerHTML = totalPraticam[0]['praticam_atividadeFisica'] // retorna os dados reais 
       })
     .catch(function(err){
     console.log(err);
+    
   })
 
-    fetch('/ObjetivoComum') // busca dados do servidor(formulario) atráves da rota
+    fetch('/dashboard/ObjetivoComum') // busca dados do servidor(formulario) atráves da rota
   .then(res => res.json()) // resposta do servidor
   .then(totalObj => {
-   div_obj.innerHTML = totalObj[0].div_obj // retorna os dados reais 
+    console.log(totalObj);
+   div_obj.innerHTML = totalObj[0].obj // retorna os dados reais 
       })
     .catch(function(err){
     console.log(err);
   })
 
-    fetch('/faixaEtaria') // busca dados do servidor(formulario)
+    fetch('/dashboard/faixaEtaria') // busca dados do servidor(formulario)
   .then(res => res.json()) // resposta do servidor
   .then(totalIdade => {
-    
+        console.log(totalIdade);
     var labels = [];
     var dados = [];
 
     for(var i = 0; i < totalIdade.length; i ++){
-      labels.push(totalIdade[i].faixaEtaria); // faixa e quantidade são o apelido q esta no select
-      dados.push(totalIdade[i].quantidade)
+      labels.push(totalIdade[i].faixa_etaria); // faixa e quantidade são o apelido q esta no select
+      dados.push(totalIdade[i].quantidade) // usar mesma chave que esta comentada na model
     }
     
   var ctx = document.getElementById('barra').getContext('2d');
   var myChart = new Chart(ctx, {
       type: 'bar', 
+       options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  },
       data: { 
           labels: labels, 
           datasets: [{ 
@@ -115,16 +127,18 @@ fetch('/totalResp') // busca dados do servidor(formulario)
     console.log(err);
   })
 
-  fetch('/genero') // busca dados do servidor(formulario)
+  fetch('/dashboard/genero') // busca dados do servidor(formulario)
   .then(res => res.json()) // resposta do servidor
   .then(totalGenero => {
+        console.log(totalGenero);
+
 
     var labels = [];
     var dados = [];
 
     for (var i = 0; i < totalGenero.length; i++){
       labels.push(totalGenero[i].genero); 
-      dados.push(totalGenero[i].quantidade)
+      dados.push(totalGenero[i].contagem)
     }
 
   var ctx = document.getElementById('pizza').getContext('2d');

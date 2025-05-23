@@ -15,8 +15,8 @@ router.get("/totalAtiv", function (req, res) {
 });
 
 // rota para Objetivo mais comum
-router.get("/ObjetivoComum", function (req, res) {
-  dashboardController.obterObjetivoComum(req, res);
+ router.get("/ObjetivoComum", function (req, res) {
+   dashboardController.obterObjetivoComum(req, res);
 });
 
 // rota para faixa etária

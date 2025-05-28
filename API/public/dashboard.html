@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/dash.css">
+    <link rel="stylesheet" href="css/dash.css">
     <title>Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -100,13 +100,7 @@ fetch('/dashboard/totalResp') // busca dados do servidor(formulario)
   var ctx = document.getElementById('barra').getContext('2d');
   var myChart = new Chart(ctx, {
       type: 'bar', 
-       options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  },
+      
       data: { 
           labels: labels, 
           datasets: [{ 

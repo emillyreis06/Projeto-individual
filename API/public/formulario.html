@@ -103,6 +103,11 @@
 
 <script>
          var fkUsuario = sessionStorage.ID_USUARIO
+
+    if (!sessionStorage.ID_USUARIO) {
+    alert("Você precisa estar logado para preencher o formulário.");
+    window.location.href = "cadastro.html"; // ou "login.html", dependendo do seu fluxo
+}
      
     function treino(){
      var faixaEtaria = select_faixa_etaria.value;
@@ -219,6 +224,7 @@
 
     return false;
   }
+
 
   function dash(){
     window.location.href = "dashboard.html";

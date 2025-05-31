@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Sobre</title>
 </head>
+
 <body>
-    
+
     <header>
         <div class="container">
             <h1>Reismove</h1>
             <ul class="navbar">
                 <li>
-                    <a href="index.html">Inicial</a>
+                    <a href="index.html">Home</a>
                 </li>
                 <li>
                     <a href="introducao.html">Introdução</a>
@@ -27,12 +29,355 @@
                 <li>
                     <a href="estrategias.html">Estrátegia</a>
                 </li>
-                <li>
-                    <a href="">Questionário</a>
-                </li>
+                <div class="botoes_home">
+                   <a href="cadastro.html"> 
+                    <button id="cadastro_home" onclick="cadastro()">Cadastro</button>
+                    </a>  
+                    <a href="login.html">
+                    <button id="login_home" onclick="login()">Login</button>
+                     </a>
+                </div>
 
             </ul>
         </div>
     </header>
+
+    <div class="container_sobre">
+        <div class="conteudo_sobre">
+            <div class="titulo_sobre">
+                <h1>Sobre Mim</h1>
+            </div>
+
+            <div class="texto_sobreMim">
+                <h3>Comecei a treinar aos 16 anos, inicialmnete com o obejtivo estético. <br>
+                    No entanto, ao longo do tempo, descobri que a musculação vai muito além do físico.
+                    A minha maior inspiração foi a minha mãe que sempre foi muito focada nessa área.
+                    As mudanças positivas na vida dela eram nítidas, e isso me motivou a seguir o mesmo
+                    caminho.</h3>
+
+                <h3>No início, sentia insegurança para treinar sozinha, mas com constância e dedicação,
+                    essa prática se tornou um hábito. Logo passei a frequentar a academia na maior parte dos dias da
+                    semana
+                    o que só se alterou decorrente de mudanças na rotina, e ver os primeiros resultados foi o que me
+                    motivou ainda mais.
+                </h3>
+
+                <h3>
+                    Ganhei autoestima, confiança e percebi que cuidar da minha saúde não é uma obrigação,
+                    se tornou um prazer. Hoje, sinto a necssidade de treinar, pois isso isso se tornou parte
+                    essencial da minha rotina.
+                </h3>
+
+                <h3>
+                    A musculação me ensinou a ter disciplina, me ajuda a aliviar o estresse e a ansiedadae do dia a dia
+                    e,
+                    acima de tudo, é extremamente gratifiante ver os resultados que vêm com esforço e dedicação.
+                </h3>
+
+
+            </div>
+        </div>
+
+        <div class="carrosel">
+            <div id="imgDiv">
+                <img src="assets/img/eu1.jpg" >
+            </div>
+            <div class="botoes_carrosel">
+                <button onclick="ant()">anterior</button>
+                <button onclick="prox()">proximo</button>
+            </div>
+        </div>
+
+        <div class="poligono_sobre">
+            <img src="assets/img/Rectangle 18.svg" alt="">
+        </div>
+
+    </div>
+
+        <section class="container_introducao">
+
+        <div class="conteudo_introducao">
+            <h1>Conheça a importância da atividade física</h1>
+            <div class="boxes_intro">
+            <div class="box1">
+                <img src="assets/img/coração.jpeg" alt="">
+                <h2>Saúde Cardiovascular</h2>
+                <ul class="lista_beneficios">
+                    <li><span>✓</span> Melhora a circulação sanguínea</li>
+                    <li><span>✓</span> Reduz a propagação de problemas cárdiacos</li>
+                    <li><span>✓</span> Controla pressão arterial</li>
+                </ul>
+            </div>
+             <div class="box1">
+                <img src="assets/img/ampuleta.jpeg" alt="">
+                <h2>Longividade</h2>
+                <ul class="lista_beneficios">
+                    <li><span>✓</span> Melhor qualidade de vida</li>
+                    <li><span>✓</span> Resistência e Força</li>
+                    <li><span>✓</span> Previne doenças</li>
+                    <li><span>✓</span> Fortalece os óssos</li>
+                </ul>
+                
+            </div>
+            <div class="box1">
+                <img src="assets/img/cerebro.jpeg" alt="">
+                <h2>Bem-Estar Mental</h2>
+                <ul class="lista_beneficios">
+                     <li><span>✓</span> Reduz a ansiedade</li>
+                    <li><span>✓</span> Libera hormônios que promovem o bem estar</li>
+                    <li><span>✓</span> Melhora a autoestima </li>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="boxes_intro2">
+            <div class="box1">
+                <img src="assets/img/energia.jpeg" alt="">
+                <h2>Energia e Produtividade</h2>
+                <ul class="lista_beneficios">
+                    <li><span>✓</span> Melhora a concentração</li>
+                    <li><span>✓</span> Menos fadiga</li>
+                    <li><span>✓</span> Aumento da motivação</li>
+                </ul>
+            </div>
+             <div class="box1">
+                <img src="assets/img/balança.jpeg" alt="">
+                <h2>Controle de Peso</h2>
+                <ul class="lista_beneficios">
+                    <li><span>✓</span> Combate a obesidade e o sedentarismo</li>
+                    <li><span>✓</span> Aumenta o metabolismo</li>
+                    <li><span>✓</span> Melhora da composição corporal</li>
+                
+                </ul>
+                
+            </div>
+            <div class="box1">
+                <img src="assets/img/Pessoas.jpeg" alt="">
+                <h2>Socialização</h2>
+                <ul class="lista_beneficios">
+                     <p><span>✓</span> Criação de novos vínculos sociais</li>
+                    <li><span>✓</span> Melhora na comunicação</li>
+                    <li><span>✓</span> Desenvolvimento de Habilidades Sociais </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="estrategias">
+     <div class="container_estrategias">
+            <div class="conteudo_estrategias">
+                <div class="titulo_estrategias">
+                <h1>Impulsionando Resultados</h1>
+        </div>
+
+        <div class="botoes_estrategia">
+            <button onclick="ganhar()">Ganhar massa magra</button>
+            <button onclick="emagrecer()">Emagrecer</button>
+            <button onclick="habitos()" >Hábitos Saudavéis</button>
+        </div>
+        <div id="div_mensagem"></div>
+    </div>
+            <div class="img_estrategias">
+                <img src="assets/img/Mask group.png" alt="">
+            </div>
+    </div>
+</section>
+
+
+
+
+<br> <br>
+    <section class="page-exercicios">
+     
+
+    <div class="container_tituloExercicios" >
+         <div class="titulo_exercicios">  
+        <h1>Exercícios </h1>
+        </div>  
+
+        <div class="poligono">
+            <img src="assets/img/Rectangle 10.svg" alt="">
+        </div>
+
+        
+    </div>
+            
+    
+
+    <div class="cards">
+      <div class="conteudo">
+    <section class="boxes">
+        
+    <div class="box-1"> 
+        <h2>Agachamento</h2>
+        <img src="assets/img/agachamento.svg" alt="">
+        <p><b>Músculos:</b><br><br>
+            Quadríceps<br>
+            Glúteos<br>
+            Posterior de coxa<br>
+            Panturrilha<br></p>
+    </div>
+
+      <div class="box-2"> 
+        <h2>Supino</h2>
+        <img src="assets/img/supino.svg" alt="">
+           <p><b>Músculos:</b><br><br>
+            Peitoral<br>
+            Tríceps<br>
+            Ombros<br> </p>
+    </div>
+      <div class="box-3 "> 
+        <h2>Prancha</h2>
+        <img src="assets/img/homem-que-faz-pushups.svg" alt="">
+           <p><b>Músculos:</b><br><br>
+            Abdômen<br>
+            Ombros<br>
+            Quadríceps<br>
+            Glúteos<br>
+            Lombar<br>
+            Costas<br></p>
+    </div>
+
+    <div class="chamado">
+        <h2>Adquira seu treino personalizado de acordo com sua preferência!!</h2>
+        <button id="treino" onclick="gerarTreino()">Gerar Treino</button>
+    </div>
+    </section>
+      </div>
+    </div>
+    </section>
+
+
 </body>
 </html>
+
+
+
+<script>
+    var lista = ['assets/img/eu1.jpg', 'assets/img/euMae.jpg', 'assets/img/eu2.jpg']
+    var contador = 0;
+    function prox() {
+        if (contador == 0) {
+            contador++
+        } else if (contador == 1) {
+            contador++
+        }else{
+            contador = 0;
+        }
+        for (var i = 0; i <= contador; i++) {
+            imgDiv.innerHTML = `<img src="${lista[i]} "class="carrossel">`;
+        }
+        console.log(contador)
+    }
+    function ant() {
+        console.log("nada aqui!")
+
+        if (contador == 2) {
+            contador--
+        } else if (contador == 1) {
+            contador--
+        }else if(contador == 0){
+            contador = 2;
+        }
+        for (var i = 0; i <= contador; i++) {
+            imgDiv.innerHTML = `<img src="${lista[i]} "class="carrossel">`;
+        }
+        console.log(contador)
+    }
+
+
+        function ganhar(){
+        var mensagem = ""
+        mensagem = `
+<div class="massa_muscular">
+  <h2>Processo de ganho de massa muscular</h2>
+
+  <h3> Alimentação adequada</h3>
+  <ul class="lista_massa"> 
+    <li>Fazer dieta hipercalórica, consumindo mais calorias do que se gasta diariamente.</li>
+    <li>Consumir frutas, pois contribuem no processo digestivo e facilitam a absorção de nutrientes.</li>
+    <li>Alimentação rica em proteínas (como carne vermelha, frango, ovos), fundamentais para:
+      <ul> 
+        <li>Estimular a hipertrofia muscular (aumento do músculo);</li>
+        <li>Ajudar na recuperação muscular após o treino, <br>
+            já que os músculos sofrem micro lesões que precisam ser reparadas.</li>
+      </ul>
+    </li>
+    <li>Incluir carboidratos complexos como arroz, batata e aveia para fornecer energia.</li>
+    <li>Incluir gorduras boas: abacate, castanhas, nozes, azeite de oliva.</li>
+  </ul>
+
+  <h3> Treinamento eficaz</h3>
+  <ul class="lista_massa">
+    <li>Realizar treinos com intensidade, preferencialmente até a falha muscular.</li>
+    <li>Manter o cárdio na rotina para evitar acúmulo de gordura e melhorar a saúde cardiovascular.</li>
+  </ul>
+</div>`
+
+        div_mensagem.innerHTML = mensagem
+    }
+
+    function emagrecer(){
+        var mensagem = "";
+        mensagem = ` <div class = "emagrecer">
+        <h2>Processo de Emagrecimento:</h2>
+
+        <h3>Alimentação adequada</h3>
+        <ul class= "lista_emagrecer">
+            <li>Dieta restritiva 
+                 <ul>
+                    <li>Consumir menos calórias do que se gasta diariamente, <br>
+                fazendo com que o organismo use as reservas de gordura como fonte de energia,
+                contribuindo para o processo de emagrecimento </li>
+                 </ul>
+            </li>
+            <li>Consumir alimentos ricos em fibras, como frutas, legumes e verduras<br>
+                 <ul>
+                    <li> Esses alimentos levam mais tempo para serem digeridos, controlando a fome no decorrer do dia</li>
+                 </ul>
+            </li>
+            <li>Alimentaçao rica em proteínas magras (como ovo, frango ...)
+                <ul>
+                    <li> Promove maior saciedade, diminuindo a fome e facilitando a perda de peso</li>
+                </ul>
+            </li>
+            
+        </ul>
+
+        <h3>Treinamento eficaz</h3>
+        <ul class = "lista_emagrecer">
+            <li>Combinar exercícios aeróbicos como caminhada,ciclismos e cárdios gerais 
+                com de força como a própria músculação </li>
+            <li>É importante que o corpo gaste uma grande quanridade de energia <br>
+                para obter o resultado esperado.
+            </li>
+        </ul>
+    </div>`
+    div_mensagem.innerHTML = mensagem
+    }
+
+    function habitos(){
+        var mensagem = "";
+        mensagem = `
+  <div class = "habitos_saudaveis">
+        <h2>Para manter a saúde equílibrida e alavancar seus resultados na musculação é preciso:</h2>
+        <ul class="lista_habitos">
+            <li>Beber ao menos 2L de água por dia. </li>
+            <li>Dormir bem, recomendado de 7-8 horas por dia</li>
+            <li>Consumir alimentos saudavéis</li>
+            <li>Ter períodos de descanso ( <i>"Sem descanso o músculo não cresce"</i>) </li>
+            <li>Ter disciplina e constância para alcançar resultados desejados</li>
+            <li>Manter uma alimentação balanceada</li>
+            <li>Consultar um nutricionista e fazer exames regulares </li>
+        </ul>
+        
+    </div>`
+
+    div_mensagem.innerHTML = mensagem
+    }
+
+    function gerarTreino(){
+    window.location.href = "formulario.html";
+  }
+</script>

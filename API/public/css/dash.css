@@ -18,6 +18,10 @@ body {
     background: linear-gradient(135deg, #25ac14, #5cd65c);
 }
 
+.conteudo_indicadores{
+    background-color: #d2ddd3;
+}
+
 .indicadores {
     display: flex;
     flex-direction: row;

@@ -15,7 +15,7 @@
             <h1>Reismove</h1>
             <ul class="navbar">
                 <li>
-                    <a href="#">Inicial</a>
+                    <a href="#">Home</a>
                 </li>
                 <li>
                     <a href="introducao.html">Introdução</a>
@@ -29,13 +29,20 @@
                 <li>
                     <a href="estrategias.html">Estrátegia</a>
                 </li>
-                <li>
-                    <a href="formulario.html">Formulário</a>
-                </li>
 
+                <div class="botoes_home">
+                   <a href="cadastro.html"> 
+        <button id="cadastro_home" onclick="cadastro()">Cadastro</button>
+     </a>  
+        <a href="login.html">
+            <button id="login_home" onclick="login()">Login</button>
+        </a>
+            </div>
             </ul>
+            
         </div>
     </header>
+
 
     <section class="inicio">
     <div class="banner">
@@ -47,15 +54,18 @@
         <img src="assets/img/imagemInicial.svg" alt="">
         </div>
     </div>
-    <div class="botao_inicial">
-      <a href="cadastro.html"> 
-        <button onclick="cadastro()">Cadastro</button>
-     </a>  
-        <a href="login.html">
-            <button onclick="login()">Login</button>
-        </a>
+    <br>
+
+    <div class="botao_saibaMais">
+        <button onclick="saiba()">Saiba Mais</button>
     </div>
     </section>
 </body>
-
 </html>
+<!-- descubra como  a musculação transformou minha vida -->
+
+<script>
+    function saiba(){
+        window.location.href = "sobre.html"
+    }
+</script>

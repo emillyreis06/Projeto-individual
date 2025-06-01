@@ -631,6 +631,7 @@ button:hover{
     background-color:#38a76149;
     background: linear-gradient( #d6f5e0 0%, #f0fff8 100%);
     justify-content: space-between;
+    padding: 25px;
 }
 
 .conteudo_introducao h1 {

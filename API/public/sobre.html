@@ -106,14 +106,15 @@
     function prox() {
         if (contador == 0) {
             contador++
+            imgDiv.innerHTML = `<img src="${lista[contador]}" class="carrossel">`;
         } else if (contador == 1) {
             contador++
+            imgDiv.innerHTML = `<img src="${lista[contador]}" class="carrossel">`;
         }else{
             contador = 0;
+            imgDiv.innerHTML = `<img src="${lista[contador]}" class="carrossel">`;
         }
-        for (var i = 0; i <= contador; i++) {
-            imgDiv.innerHTML = `<img src="${lista[i]} "class="carrossel">`;
-        }
+      
         console.log(contador)
     }
     function ant() {
@@ -121,13 +122,17 @@
 
         if (contador == 2) {
             contador--
+            imgDiv.innerHTML = `<img src="${lista[contador]}" class="carrossel">`;
         } else if (contador == 1) {
             contador--
+            imgDiv.innerHTML = `<img src="${lista[contador]}" class="carrossel">`;
         }else if(contador == 0){
             contador = 2;
-        }
-        for (var i = 0; i <= contador; i++) {
-            imgDiv.innerHTML = `<img src="${lista[i]} "class="carrossel">`;
+            imgDiv.innerHTML = `<img src="${lista[contador]}" class="carrossel">`;
+            
         }
         console.log(contador)
     }
+
+
+</script>
